@@ -30,7 +30,6 @@ const RegistrationPage = () => {
       alert("Passwords don't match.");
       return;
     }
-
     // API call to register the user
     try {
       const response = await fetch("http://10.29.8.91/signup", {
@@ -48,12 +47,8 @@ const RegistrationPage = () => {
         }),
       });
       console.log(response);
-      if (response.ok) {
-        alert("Registration successful");
-        // Redirect or further actions
-      } else {
-        alert("Registration failed");
-      }
+      alert("Registration successful");
+      window.location.href = "/login";
     } catch (error) {
       console.error("Error:", error);
       alert("An error occurred while registering");
