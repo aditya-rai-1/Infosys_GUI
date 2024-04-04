@@ -33,17 +33,21 @@ const RegistrationPage = () => {
 
     // API call to register the user
     try {
-      const response = await fetch("http://10.29.8.91/person", {
+      const response = await fetch("http://10.29.8.91/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
           ...formData,
-          username: formData.email, // Assuming email is used as username
+          first_name: formData.firstName,
+          last_name: formData.lastName,
+          username: formData.email,
+          address: "Hello",
+          organisation: "123", // Assuming email is used as username
         }),
       });
-
+      console.log(response);
       if (response.ok) {
         alert("Registration successful");
         // Redirect or further actions

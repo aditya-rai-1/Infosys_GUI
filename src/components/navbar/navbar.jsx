@@ -7,7 +7,7 @@ const ProfileDropDown = props => {
   const [state, setState] = useState(false);
   const profileRef = useRef();
 
-  const navigation = [{title: "Log out", path: "/"}];
+  const navigation = [{title: "Log out", path: "/login"}];
 
   useEffect(() => {
     const handleDropDown = e => {
