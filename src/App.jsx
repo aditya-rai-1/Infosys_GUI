@@ -20,7 +20,7 @@ export default function App() {
     dispatch({
       type: "INITIALIZE_TOKEN",
     });
-  }, [token]);
+  }, [token.token]);
   return (
     <Router>
       <Routes>

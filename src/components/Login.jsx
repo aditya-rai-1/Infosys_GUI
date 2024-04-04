@@ -16,11 +16,18 @@ const LoginPage = () => {
         body: JSON.stringify({username, password}),
       });
 
+      if (!response.ok) {
+        throw new Error("Login failed");
+      }
+
+      const data = await response.json();
+      // console.log("Login successful:", data);
       dispatch({
         type: "SET_TOKEN",
-        token: response.jwt_token,
-      })
+        token: data.jwt_token,
       
+      });
+      window.location.href = "/";
       // Redirect user to a new page or handle login success scenario here
     } catch (error) {
       console.error("Login error:", error.message);
